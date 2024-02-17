@@ -1,7 +1,5 @@
 import 'package:aichatterbox/Constant/pallete.dart';
 import 'package:aichatterbox/Screens/homepage.dart';
-import 'package:aichatterbox/demofile.dart';
-// import 'package:aichatterbox/demofile.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,5 +1,9 @@
 import 'package:aichatterbox/Constant/feature_box.dart';
+
 import 'package:aichatterbox/Constant/pallete.dart';
+
+import 'package:aichatterbox/Network/ai_service.dart';
+
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
@@ -14,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   final SpeechToText _speechToText = SpeechToText();
   bool _speechEnabled = false;
   String _wordSpoken = '';
+  final AIService aiService = AIService();
 
   @override
   void initState() {
@@ -38,7 +43,7 @@ class _HomePageState extends State<HomePage> {
 
   void speechResult(result) {
     setState(() {
-      _wordSpoken = '${result.recognizedWords}';
+      _wordSpoken = result.recognizedWords;
     });
   }
 
@@ -134,7 +139,9 @@ class _HomePageState extends State<HomePage> {
               _speechToText.isNotListening) {
             await startListening();
           } else if (_speechToText.isListening) {
-            stopListening();
+            final speech = await aiService.isArtPrompt(_wordSpoken);
+            print(speech);
+            await startListening();
           } else {
             initSpeech();
           }
