@@ -12,7 +12,9 @@ This is a Flutter-based AI chatbot application that utilizes the OpenAI API for 
 - **Speech to Text**: Converts user voice commands into text for processing.
 - **HTTP**: Communicates with OpenAI API and other services via HTTP requests.
 
+## Representation 
 
+<img width="426" alt="Screenshot 2024-01-07 at 10 42 01 pm" src="https://github.com/Abinash022/Flutter-AI-Chatbot/assets/103113945/c6c39f73-361d-4da7-b1ab-d18856c2c387">
 
 ## Requirements
 
